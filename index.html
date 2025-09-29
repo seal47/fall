@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <title>Dodge the Falling Object</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page">
+      <div class="layout">
+        <!-- Game area -->
+        <div id="game" aria-label="Dodge the Falling Object game">
+          <!-- Top-right social links (replace href/src with your own) -->
+          <nav id="links" aria-label="Social links">
+            <a
+              id="link-twitter"
+              href="https://twitter.com/yourhandle"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="icon-btn"
+              title="Twitter"
+              aria-label="Twitter"
+            >
+              <img src="assets/twitter.svg" alt="" />
+            </a>
+            <a
+              id="link-dex"
+              href="https://dexscreener.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="icon-btn"
+              title="Dexscreener"
+              aria-label="Dexscreener"
+            >
+              <img src="assets/dexscreener.png" alt="" />
+            </a>
+          </nav>
+
+          <!-- HUD score -->
+          <div id="score" aria-live="polite">0</div>
+
+          <!-- Player -->
+          <div id="player" role="img" aria-label="Player"></div>
+
+          <!-- Bottom banner with your text -->
+          <div id="bottom-banner">
+            4wDpFoC548QX1CUy5AKLY7hP6LAVYdRMGGJ7MFCppump
+          </div>
+
+          <!-- Overlay: start + game over panes -->
+          <div id="overlay">
+            <div class="panel">
+              <!-- Start pane -->
+              <div id="pane-start">
+                <h1>Dodge the Falling Object</h1>
+                <p class="muted">
+                  Enter your wallet address to join the global leaderboard.
+                </p>
+                <label class="label" for="wallet-input">Wallet address</label>
+                <input
+                  id="wallet-input"
+                  type="text"
+                  inputmode="text"
+                  autocomplete="off"
+                  spellcheck="false"
+                  placeholder="e.g., meow1JLsqq7EJPRoYGTiGGgk3LQH2Z92eFU2yZCthqt"
+                />
+                <button id="btn-start" type="button" disabled>Start</button>
+                <div class="small-hint">
+                  Move with A / D or ← / →. Avoid the falling shapes.
+                </div>
+              </div>
+
+              <!-- Game over pane -->
+              <div id="pane-over" class="hidden">
+                <h1 id="overlay-title">Game Over</h1>
+                <p id="overlay-subtitle">
+                  Score: <span id="final-score">0</span>
+                </p>
+                <div class="hint">
+                  Press Space / Enter or click Play Again to retry.
+                </div>
+                <div class="btn-row">
+                  <button id="btn-restart" type="button">Play Again</button>
+                  <button id="btn-change-wallet" type="button" class="ghost">
+                    Change Wallet
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Leaderboard panel (bigger) -->
+        <aside id="leaderboard" aria-label="Leaderboard">
+          <header class="lb-header">
+            <h2>Leaderboard</h2>
+            <div class="you" title="Your best on this device">
+              <div class="you-wallet" id="you-wallet" title=""></div>
+              <div class="you-scores">
+                <span>Best:</span>
+                <strong id="you-best">0</strong>
+              </div>
+            </div>
+          </header>
+          <ol id="lb-list" class="lb-list" aria-live="polite"></ol>
+          <div id="lb-empty" class="lb-empty">No scores yet.</div>
+        </aside>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
